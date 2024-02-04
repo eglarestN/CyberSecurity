@@ -1,0 +1,47 @@
+              Tememl Komutlar
+
+setxkbmap => Klavyenin dilini Türkçeye ayarlar
+pwd => Çalışılan dosyanın dizin yolunu gösterir
+ls => Çalışılan dizinde bulunan dosyaları listeler
+cd => Çalışılan dizini değiştirmek için kullanılır
+mkdir => Yeni bir klasör oluşturur
+Clear- Ctrl+c => terminal ekranını temizler
+touch => Yeni bir dosya oluşturur
+mv => Dosyaları taşımak veya yeniden adlandırmak için kullanılır
+cp => Dosyaları kopyalamak için kullanılır
+rm => Dosyalrı veya dizinleri silmek için kullanılır
+rm -r => Dizinleri ve içeriğini silmek için kullanılır
+rm -rf => Zorla dizinleri ve içeriğini silmek için kullanılır
+rm -f => Sadece dosyaları silmek için kullanılır
+<komut> -help => Komutun yarım belgesini görüntüler
+sudo su => Root kullanıcısına geçiş yapar
+
+          Linux Dosya Dizinleri
+
+bin => Dosyanın içeriğini ekrana yazdıran komut
+sbin => Sistem tarafından çalıştırılan komutların ve programların bulunduğu klasör
+dev => Donanım dosyalarının bulunduğu klasör
+etc => Konfigrasyon dosyalarının bulunduğu klasör
+var => Değişken dosyaların bulunduğu klasör
+tmp => Geçici dosyaların bulunduğu klasör
+proc => Sistemin işlettiği süreçlerin bilgilerini içeren klasör
+mnt => Geçici olarak mount edilmiş dosyaların bulunduğu klasör
+media => USB, CD-ROM sürücüleri ve klasörlerin bulunduğu klasör
+boot => İşletim sistemi başlatıldığında çalıştırılan programların bulunduğu klasör
+srv => İşletim sisteminde arka planda çalışan programların tutulduğu klasör
+usr => Çalıştırılabilir kullanıcıların kullanacağı uygulamaları içeren klasör
+
+           Diğer Temel Komutlar
+
+cat => Dosyanın içeriğini terminale yazdıran komut
+nano => Dosyaları düzenlemek için kullanılan metin düzenleyici açar
+ls -la => Dizin içerisinde gizli dosyaları ve detaylı dosya bilgilerini gösterir
+ifconfig => IP, MAC adresleri ve netmask gibi ağ bilgilerini gösterir
+passwd => Kullanıcı parolasını değiştirmek için kullanılır
+
+        Linux Paket Yöneticileri
+
+apt update => Paket yöneticisini günceller
+apt upgrade => Sistemdeki yazılımları günceller
+apt install => Belirli bir yazılımı indirir ve kurar
+apt search => İlgili yazılımı arar ve sonuçları listeler
