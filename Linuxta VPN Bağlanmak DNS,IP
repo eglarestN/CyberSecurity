@@ -1,0 +1,65 @@
+
+IP (Internet Protokol):
+IP, veri paketlerinin internet üzerinden iletilmesini ve alınmasını düzenleyen kurallar ve protokollerin bir kümesini ifade eder.
+
+Genel IP:
+Genel IP adresiniz, internete bağlandığınızda cihazınıza atanan benzersiz adrestir. Genel IP adresinizi “IP adresim nedir” gibi bir arama motoru veya modeminizin arayüzünü kullanarak bulabilirsiniz.
+
+Yerel IP:
+Yerel IP adresleri genellikle yönlendiriciniz tarafından atanır ve 192.168.x.x aralığında bulunur. Bu adresler yerel ağınızdaki cihazlar için kullanılır ve internet üzerinden doğrudan erişilemezler. 
+Yerel IP adresinizi Linux’ta “ifconfig” komutu veya Windows’ta “ipconfig” ile bulabilirsiniz.
+
+VPN (Sanal Özel Ağ):
+VPN veya Sanal Özel Ağ, internet üzerinden güvenli ve şifrelenmiş bir bağlantı oluşturmanıza olanak tanıyan bir teknolojidir. Genellikle web’de gezinirken gizliliğinizi ve güvenliğinizi korumak için kullanılır.
+
+DNS (Alan Adı Sunucusu):
+DNS veya Alan Adı Sunucusu, alan adlarını (örneğin www.ornek.com) IP adreslerine çeviren bir sistemdir. DNS ayarlarınızı değiştirerek internet servis sağlayıcınızın ziyaret ettiğiniz web sitelerini izlemesini önleyebilirsiniz.
+
+Ping:
+“ping” komutu, bir alan adına veya IP adresine küçük veri paketleri göndererek hedefin erişilebilir olup olmadığını kontrol etmenizi ve yanıt sürelerini almanızı sağlar.
+Ctrl + C:
+
+Ctrl + C tuşları, bir terminal veya komut istemcisinde çalışan bir programı sonlandırmanıza olanak tanır.
+Kali Linux’ta VPN Bağlantısı:
+
+Kali Linux’ta VPN’ye bağlanmak için VPN dosyalarını vpnbook.com gibi web sitelerinden indirebilir ve çıkarabilirsiniz.
+VPNBook klasörüne erişin ve .ovpn dosyalarını bulun.
+VPN bağlantısını başlatmak için .ovpn dosyasının adını kullanarak “openvpn” komutunu kullanın. Kullanıcı adı ve şifrenizi girmeniz istenecektir.
+
+VPN Bağlantısını Sorun Giderme:
+
+Sorunlarla karşılaşırsanız, .ovpn dosyasının en üstüne “tls-cipher ‘DEFAULT:@SECLEVEL=0’” eklemeyi deneyin ve yeniden bağlanın.
+Ayrıca DNS ayarlarınızı değiştirerek Google DNS gibi farklı DNS sunucularını kullanabilirsiniz (8.8.8.8, 8.8.4.4).
+
+DNS Ayarlarını Değiştirme:
+
+DNS ayarlarını /etc/resolv.conf dosyasında bulabilir ve değiştirebilirsiniz. Gerekirse dosyayı yazılabilir hale getirmek için “chattr” kullanın.
+nano ile dosya içeriğini değiştirmek istediğimizde root kullanıcısı olsanız bile dosya unwritable olabilir. Çözüm için yapmanız gereken
+chattr <dosyaAdi> → (change attribute) dosyanın özelliklerini değiştirmenize olanak sağlayan bir komutttur.
+lsattr → dosyanın özelliklerini gösteren komuttur.
+lsattr /etc/resolv.conf → çalıştırdığınızda büyük ihtimalle
+— — -i — — — — — -e — — — — — — /etc/resolv.conf şeklinde bir çıktı alırsınız bu dosyanın değiştirilemez olduğu anlamına gelir.
+Eğer buradaki i yi kaldırabilirseniz artık bu dosya değiştirilebilir hale gelir.
+
+chattr -i <dosyaAdi> → komutu ile buradaki değiştirilemez özelliğini kaldırabilirsiniz.
+
+tekrardan yazılabilir hale getirmek için
+chattr +i <dosyaAdi> → komutu ile tekrardan dosyayı değiştirlemez hale getirebilirsiniz.
+
+Bu işlemleri uyguladıktan sonra tekrardan nano /etc/resolv.conf komutunu çalıştırarak dosya içerisinde değişiklik yapabilirsiniz.
+dosya ilk açıldığında
+
+nameserver 192.168.1.1
+nameserver 192.168.68.1
+
+şeklinde bir çıktı alırsınız bu satırların altına
+
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+
+satırlarını ekleyebilirsiniz
+
+Ana Makinenizin VPN’sini Kullanma:
+
+Eğer Kali Linux’i sanal bir makina olarak kullanıyorsanız, trafiği ana makinenizin VPN bağlantısı üzerinden yönlendirmek için ana makinenizin VPN bağlantısını kullanabilirsiniz.
+Bu talimatlar, Kali Linux’ta VPN bağlantılarını ve DNS ayarlarını sorun giderme ve yapılandırma konularında size yardımcı olabilir.
